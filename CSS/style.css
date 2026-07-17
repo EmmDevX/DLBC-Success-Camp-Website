@@ -24,10 +24,35 @@
     font-display: swap;
 }
 
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 140, 0, 0.6);
+  border-radius: 20px;
+  height: 4px;
+  backdrop-filter: blur(10px);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 140, 0, 0.9);
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 /* Loading effect */
@@ -90,7 +115,7 @@
 
 /* Header Styling */
 .header{
-    padding: 25px 20px;
+    padding: 10px 20px;
     font-family: 'Helvetica Now Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 400;
     font-weight: 500;
@@ -126,11 +151,32 @@
 
 
 /* Navigation Bar */
-    .nav{
-        background-color: var(--blue-100);
-        color:var(--white);
-        padding: 12px 30px;
+ .nav{
+    position: relative;
+    width:100%;
+    background-color:var(--blue-100);
+    color:var(--white);
+    padding:12px 30px;
+    transition:.4s ease;
+}
+
+.nav.sticky{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    animation:slideDown .4s ease;
+}
+
+@keyframes slideDown{
+    from{
+        transform:translateY(-100%);
     }
+    to{
+        transform:translateY(0);
+    }
+}
 
     .nav-bar{
         display: flex;
@@ -230,7 +276,122 @@
     transform:rotate(-45deg) translate(6px,-6px);
 }
 
+/* Hero Section */
+.hero{
+    position:relative;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    margin-top: 0;
+}
+/* Slider Container */
+.hero-slider{
+    position:absolute;
+    inset:0;
+    z-index:0;
+}
 
+/* Images & Video */
+.slide{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    opacity:0;
+    transition:opacity 1.5s ease;
+}
+
+.slide.active{
+    opacity:1;
+}
+
+/* Orange Overlay */
+.overlay{
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(
+        rgba(255, 111, 0, 0.45),
+        rgba(20, 10, 0, 0.65)
+    );
+}
+
+.hero-content{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    color:#fff;
+    z-index:2;
+}
+
+.hero-content p{
+    font-size:18px;
+    letter-spacing:10px;
+    margin-bottom:20px;
+}
+
+.hero-content h1{
+    font-size:150px;
+    font-weight:900;
+    line-height:1;
+  
+}
+
+.hero-content h2{
+    font-size:130px;
+    line-height:1;
+    color:transparent;
+    -webkit-text-stroke:2px #fff;
+      color: var(--orange-200);
+}
+
+.btn{
+    display:inline-block;
+    margin-top:40px;
+    padding:18px 40px;
+    background:#fff;
+    color:#000;
+    text-decoration:none;
+    font-weight:bold;
+    letter-spacing:2px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#ff6f00;
+    color:#fff;
+}
+
+/* Dot navigation */
+.scroll-dots{
+    position:fixed;
+    top:50%;
+    right:30px;
+    transform:translateY(-50%);
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    z-index:999;
+}
+
+.dot{
+    width:12px;
+    height:12px;
+    border:2px solid white;
+    border-radius:50%;
+    background:transparent;
+    transition:.35s;
+}
+
+.dot.active{
+    background:#f2850c;
+    border-color:#f2850c;
+    transform:scale(1.4);
+}
 
 /* Mobile Responsiveness */
 @media (max-width:768px){
@@ -299,9 +460,26 @@
     .logo img{
         width: 38px;
     }
+    
+    .hero {
+        height: 90vh;
+    }
+
+    .hero-content h1 {
+        font-size: 4rem;
+    }
+
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .scroll-dots {
+        right: 20px;
+    }
 }
 
-/* Mobile phones */
+
+/* Mobile Devices */
 @media (max-width: 480px){
     .spinner{
         width: 60px;
@@ -312,9 +490,56 @@
     .logo img{
         width: 30px;
     }
+      .hero {
+        height: 100svh;
+    }
+
+    .slide {
+        object-position: center;
+    }
+
+    .hero-content {
+        width: 90%;
+    }
+
+    .hero-content p {
+        font-size: 0.85rem;
+        letter-spacing: 3px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+
+
+    /* Move dots to bottom on mobile */
+    .scroll-dots {
+        right: auto;
+        top: auto;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+
 }
 
-/* Very small devices */
+/* Small Devices */
 @media (max-width: 320px){
     .spinner{
         width: 50px;
@@ -326,3 +551,6 @@
         width: 24px;
     }
 }
+
+
+@media(max-width:)
