@@ -27,9 +27,15 @@
           </p>
         </div>
         <div class="social-icons">
-          <div class="icon"><img src="./Images/facebook.svg" alt="facebook" /></div>
-          <div class="icon"><img src="./Images/twitter.svg" alt="Twitter" /></div>
-          <div class="icon"><img src="./Images/instagram.svg" alt="Instagram" /></div>
+          <div class="icon">
+            <img src="./Images/facebook.svg" alt="facebook" />
+          </div>
+          <div class="icon">
+            <img src="./Images/twitter.svg" alt="Twitter" />
+          </div>
+          <div class="icon">
+            <img src="./Images/instagram.svg" alt="Instagram" />
+          </div>
         </div>
       </div>
     </header>
@@ -38,8 +44,8 @@
       <div class="nav-bar">
         <!--Logo-->
         <div class="iyc">
-            <img src="./Images/iyc-logo.png" alt="logo">
-            <span>International Youth Success Camp 2026</span>
+          <img src="./Images/iyc-logo.png" alt="logo" />
+          <span>International Youth Success Camp 2026</span>
         </div>
         <!--Links-->
         <div class="links" id="links">
@@ -52,34 +58,31 @@
         </div>
         <!--Donate Button-->
         <button class="donate">Donate</button>
-          <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </nav>
     <!--Hero Section-->
     <section class="hero">
-
       <!-- Background Slider -->
-    <div class="hero-slider">
-
-        <img src="./Images/image 1.jpg" class="slide active" alt="">
-
-        <img src="./Images/image 2.jpg" class="slide" alt="">
+      <div class="hero-slider">
+        <img src="./Images/image 1.jpg" class="slide active" alt="" />
 
         <video class="slide" muted autoplay playsinline>
-            <source src="https://web.facebook.com/share/v/1CyCAdTgH7/" type="video/mp4">
+          <source src="./Images/video.mp4" type="video/mp4" />
         </video>
 
-        <img src="./Images/image 3.jpg" class="slide" alt="">
+        <video class="slide" muted autoplay playsinline>
+          <source src="./Images/video2.mp4" type="video/mp4" />
+        </video>
+      </div>
 
-    </div>
+      <div class="overlay"></div>
 
-    <div class="overlay"></div>
-
-    <div class="hero-content">
+      <div class="hero-content">
         <p>WELCOME TO</p>
 
         <h1>IBARA</h1>
@@ -87,16 +90,42 @@
         <h2>CENTER</h2>
 
         <a href="#" class="btn">EXPLORE MORE</a>
+      </div>
+      <div class="scroll-dots">
+        <a href="#home" class="dot active"></a>
+        <a href="#about" class="dot"></a>
+        <a href="#services" class="dot"></a>
+        <a href="#gallery" class="dot"></a>
+        <a href="#contact" class="dot"></a>
+      </div>
+    </section>
+    <!--Note Section-->
+    <section id="about">
+    <div class="title">
+        <p>1 Timothy 4:12</p>
+        <h3>Raising a Generation of Purpose, Excellence, and Godly Influence</h3>
     </div>
-    <div class="scroll-dots">
-    <a href="#home" class="dot active"></a>
-    <a href="#about" class="dot"></a>
-    <a href="#services" class="dot"></a>
-    <a href="#gallery" class="dot"></a>
-    <a href="#contact" class="dot"></a>
-</div>
 
+    <div class="about-desc">
+
+        <div>
+            <p class="desc">
+                Success Camp is a platform designed to inspire and transform young lives by helping them discover their God-given purpose, grow in faith, and develop the character needed for lasting impact. Through mentorship, leadership development, and practical teachings, we empower youths to embrace their potential and become examples of excellence, integrity, and godly influence in their generation.
+            </p>
+        </div>
+
+        <div class="desc-img">
+            <div class="image-box">
+                <img src="./Images/kumuyi.png" alt="Pst Kumuyi">
+                <p>Dr. W.F Kumuyi</p>
+            </div>
+        </div>
+
+    </div>
 </section>
+    <button id="backTop">
+      <img src="./Images/arrow-up.svg" />
+    </button>
   </body>
   <script src="./JavaScript/script.js"></script>
 </html>
