@@ -138,3 +138,20 @@ backTop.addEventListener("click", () => {
         behavior: "smooth"
     });
 });
+
+const bgMusic = document.getElementById('bg-music');
+const musicToggle = document.getElementById('music-toggle');
+let isMusicPlaying = false;
+
+if (bgMusic && musicToggle) {
+    musicToggle.addEventListener('click', () => {
+        if (isMusicPlaying) {
+            bgMusic.pause();
+            musicToggle.innerHTML = '<img src="./Images/play.svg" alt="playbtn">';
+        } else {
+            bgMusic.play().catch(e => console.log("Audio play failed:", e));
+            musicToggle.innerHTML = '<img src="./Images/pause.svg" alt="pausebtn">';
+        }
+        isMusicPlaying = !isMusicPlaying;
+    });
+}

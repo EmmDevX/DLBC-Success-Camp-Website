@@ -4,6 +4,7 @@
     <link rel="icon" href="./Images/favicon-32x32.png" />
     <link rel="stylesheet" href="./CSS/style.css" />
     <meta charset="UTF-8" />
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>International Youth Success Camp</title>
   </head>
@@ -70,27 +71,24 @@
       <!-- Background Slider -->
       <div class="hero-slider">
         <img src="./Images/image 1.jpg" class="slide active" alt="" />
-
         <video class="slide" muted autoplay playsinline>
           <source src="./Images/video.mp4" type="video/mp4" />
         </video>
-
         <video class="slide" muted autoplay playsinline>
           <source src="./Images/video2.mp4" type="video/mp4" />
         </video>
+        <video class="slide" muted autoplay playsinline>
+          <source src="./Images/video3.mp4" type="video/mp4" />
+        </video>
       </div>
-
       <div class="overlay"></div>
-
       <div class="hero-content">
         <p>WELCOME TO</p>
-
         <h1>IBARA</h1>
-
         <h2>CENTER</h2>
-
-        <a href="#" class="btn">EXPLORE MORE</a>
+         <a href="#" class="btn">EXPLORE MORE</a>
       </div>
+      <!--Dots Pagination-->
       <div class="scroll-dots">
         <a href="#home" class="dot active"></a>
         <a href="#about" class="dot"></a>
@@ -128,8 +126,17 @@
         </div>
       </div>
     </section>
+    <!--Back to Top-->
     <button id="backTop">
       <img src="./Images/arrow-up.svg" />
+    </button>
+    <!--Background Song-->
+    <audio id="bg-music" loop>
+      <source src="./Images/Charity_Gayle_-_I_Speak_Jesus_CeeNaija.com_.mp3" type="audio/mp3" />
+    </audio>
+     <button id="music-toggle" class="music-btn magnetic" title="Play Music">
+      <img src="./Images/play.svg" alt="playbtn">
+      
     </button>
   </body>
   <script src="./JavaScript/script.js"></script>
